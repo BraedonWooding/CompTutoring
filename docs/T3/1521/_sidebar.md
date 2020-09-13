@@ -1,13 +1,13 @@
 - [Introduction](_introduction)
 - **Tutorials**
-- [Wk02](Tute2/Wk02)
-<!-- - [Wk03](Tute3/Wk03) -->
-<!-- - [Wk04](Tute4/Wk04) -->
-<!-- - [Wk05](Tute5/Wk05) -->
-<!-- - [Wk07](Tute7/Wk07) -->
-<!-- - [Wk08](Tute8/Wk08) -->
-<!-- - [Wk09](Tute9/Wk09) -->
-<!-- - [Wk10](Tute10/Wk10) -->
+- [Wk02](T3/1521/Tute2/Wk02)
+<!-- - [Wk03](T3/1521/Tute3/Wk03) -->
+<!-- - [Wk04](T3/1521/Tute4/Wk04) -->
+<!-- - [Wk05](T3/1521/Tute5/Wk05) -->
+<!-- - [Wk07](T3/1521/Tute7/Wk07) -->
+<!-- - [Wk08](T3/1521/Tute8/Wk08) -->
+<!-- - [Wk09](T3/1521/Tute9/Wk09) -->
+<!-- - [Wk10](T3/1521/Tute10/Wk10) -->
 - **Useful Links**
 - [BigO Tool](BigOh)
 - [Home Computing](home_computing)
