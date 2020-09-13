@@ -1,7 +1,7 @@
 - [Introduction](_introduction)
 - **Subjects**
-- [COMP1521](1521/README.md)
-- [COMP2511](2511/README.md)
+- [COMP1521](1521/)
+- [COMP2511](2511/)
 - **Useful Links**
 - [BigO Tool](../BigOh)
 - [Home Computing](../home_computing)

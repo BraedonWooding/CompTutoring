@@ -1,11 +1,11 @@
 - [Introduction](_introduction)
 - **Trimesters**
-- [T2](T2)
-    - [Comp1521 T2](T2/1521)
-    - [Comp2511 T2](T2/2511)
-- [T3](T3)
-    - [Comp1521 T2](T2/1521)
-    - [Comp2511 T2](T2/2511)
+- [T2](T2/)
+    - [Comp1521 T2](T2/1521/)
+    - [Comp2511 T2](T2/2511/)
+- [T3](T3/)
+    - [Comp1521 T2](T2/1521/)
+    - [Comp2511 T2](T2/2511/)
 - **Useful Links**
 - [BigO Tool](BigOh)
 - [Home Computing](home_computing)
