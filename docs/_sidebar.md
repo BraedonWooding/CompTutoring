@@ -1,8 +1,5 @@
 - [Introduction](_introduction)
 - **Trimesters**
-- [T2](T2/)
-    - [Comp1521 T2](T2/1521/)
-    - [Comp2511 T2](T2/2511/)
 - [T3](T3/)
     - [Comp1521 T3](T3/1521/)
     - [Comp2511 T3](T3/2511/)
