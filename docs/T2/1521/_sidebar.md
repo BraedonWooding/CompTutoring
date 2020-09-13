@@ -9,12 +9,12 @@
 - [Wk09](Tute9/Wk09)
 - [Wk10](Tute10/Wk10)
 - **Useful Links**
-- [BigO Tool](../../BigOh)
-- [Home Computing](../../home_computing)
-- [GDB + Valgrind](../../gdb_valgrind)
-- [FileIO in C](../../FileIO_Files/ExampleFileReading)
-- [String Algos](../../StringAlgos/StringAlgos)
+- [BigO Tool](BigOh)
+- [Home Computing](home_computing)
+- [GDB + Valgrind](gdb_valgrind)
+- [FileIO in C](FileIO_Files/ExampleFileReading)
+- [String Algos](StringAlgos/StringAlgos)
 - [My Bit Math Program](https://braedonwooding.github.io/BitwiseCmpViz/#/)
-- [Tree Implementations](../../Detailed_TreeImplementations/Detailed_TreeImplementations.md)
+- [Tree Implementations](Detailed_TreeImplementations/Detailed_TreeImplementations.md)
 - **Github Stuff**
 - [![Github](https://icongram.jgog.in/simple/github.svg?color=808080&size=16)Github](https://github.com/BraedonWooding/CompTutoring)
