@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<div id="align_middle"><h1>Enter the psuedo code then 'run'</h1></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" title="Simple">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" media="(prefers-color-scheme: dark)">
+<script src="chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.4"></script>
+<script src="bundle.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+</head>
+<body>
+<!-- Create a paragraph with id mydata -->
+<div id="box">
+<p style="font-family: monospace;" id="result">NOTE: This is highly experimental code and may just not work</p>
+<p style="font-family: monospace;" id="error"></p>
+<style>
+  #start {
+    width: 8em;
+  }
+  #end {
+    width: 8em;
+  }
+  #step {
+    width: 5em;
+  }
+
+  div.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  div.left {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+  }
+
+  div.right {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      margin-left: 15px;
+  }
+
+  div.below {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 2;
+  }
+
+  div.container {
+    margin-left: 10px;
+  }
+
+  #align-middle {
+    align-content: center
+  }
+
+  #inputScript {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  #editorContainer {
+    width: 400px;
+    height: 300px;
+    position: relative;
+  }
+
+  .chart-container {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 400px !important;
+  }
+</style>
+
+<p>
+<select id="listOfGists" onchange="changeGist()">
+<option disabled selected value> -- select an option -- </option>
+</select>
+</p>
+
+<script src="https://ajaxorg.github.io/ace-builds/src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajaxorg.github.io/ace-builds/src/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+<div class="container">
+<div id="editorContainer" class="left">
+<div id="inputScript">
+</div>
+</div>
+
+<div class="right">
+  <p> <button onclick="run();"> Run! </button> </p>
+  <p id="BigO"> </p>
+  <p> Start: <input type="number" id="start" value="10"> </p>
+  <p> End: <input type="number" id="end" value="1000"> </p>
+  <p> Step: <input type="number" id="step" value="2"> </p>
+</div>
+</div>
+<script>
+    define('ace/mode/custom', ['require', 'exports', 'module', 'ace/lib/oop', 'ace/lib/lang', 'ace/mode/custom_highlight_rules', 'ace/mode/text_highlight_rules'], function (require, exports, module) {
+        var oop = require("ace/lib/oop");
+        var textMode = require("ace/mode/text").Mode;
+        var tokenizer = require("ace/tokenizer").Tokenizer;
+        var customHighlightRules = require("ace/mode/custom_highlight_rules").CustomHighlightRules;
+        var Mode = function() { this.HighlightRules = customHighlightRules; };
+        oop.inherits(Mode, textMode);
+        (function() {
+            this.$id = 'ace/mode/custom';
+        }).call(Mode.prototype);
+        exports.Mode = Mode;
+    });
+
+    define('ace/mode/custom_highlight_rules', ['require', 'exports', 'module', 'ace/lib/oop', 'ace/lib/lang', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
+        var oop = require("ace/lib/oop");
+        var textHighlightRules = require("ace/mode/text_highlight_rules").TextHighlightRules;
+        var customHighlightRules = function() {
+            var mapper = this.createKeywordMapper({
+                "variable.language": "this",
+                "support.function":
+                    "rand|print|pop|push|empty|length|enqueue|dequeue|init",
+                "constant.language":
+                    "true|false",
+                "keyword":
+                    "if|elif|else|for|endfor|endif|while|endwhile|end|then|do"
+            }, "text", true);
+
+            this.$rules = {
+                "start": [ 
+                    {
+                        token: 'constant.numeric', // float
+                        regex: '[+-]?\\d+(?:(?:\\.\\d*)?(?:[eE][+-]?\\d+)?)?\\b'
+                    },
+                    {
+                        token: 'comment',
+                        regex: '(?:#).*$'
+                    },
+                    {
+                        token: 'keyword.operator',
+                        regex: '\\+|\\-|\\/|%|<|>|>=|<=|==|!=|<>|~=|=|\\+=|\\-=|%=|\\/=|\\*|\\*=|\\*\\*|\\*\\*=|!'
+                    },
+                    {
+                        token: 'paren.lparen',
+                        regex: '[\\(]'
+                    },
+                    {
+                        token: 'paren.rparen',
+                        regex: '[\\)]'
+                    },
+                    {
+                        regex: "\\w+\\b",
+                        token: mapper
+                    },
+                ]
+            };
+            this.normalizeRules();
+        };
+
+        oop.inherits(customHighlightRules, textHighlightRules);
+        exports.CustomHighlightRules = customHighlightRules;
+    });
+
+    var langTools = ace.require("ace/ext/language_tools");
+    editor = ace.edit("inputScript");
+    editor.session.setMode("ace/mode/custom");
+</script>
+<div class="chart-container"><canvas id="chart"></canvas></div>
+
+</div>
+</body>
+</html>

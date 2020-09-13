@@ -1,0 +1,18 @@
+- [Introduction](_introduction)
+- **Trimesters**
+- [T2](T2)
+    - [Comp1521 T2](T2/1521)
+    - [Comp2511 T2](T2/2511)
+- [T3](T3)
+    - [Comp1521 T2](T2/1521)
+    - [Comp2511 T2](T2/2511)
+- **Useful Links**
+- [BigO Tool](BigOh)
+- [Home Computing](home_computing)
+- [GDB + Valgrind](gdb_valgrind)
+- [FileIO in C](FileIO_Files/ExampleFileReading)
+- [String Algos](StringAlgos/StringAlgos)
+- [My Bit Math Program](https://braedonwooding.github.io/BitwiseCmpViz/#/)
+- [Tree Implementations](Detailed_TreeImplementations/Detailed_TreeImplementations.md)
+- **Github Stuff**
+- [![Github](https://icongram.jgog.in/simple/github.svg?color=808080&size=16)Github](https://github.com/BraedonWooding/CompTutoring)
