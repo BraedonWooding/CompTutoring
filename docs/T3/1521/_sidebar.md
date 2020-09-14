@@ -1,6 +1,6 @@
 - [Introduction](_introduction)
 - **Tutorials**
-- [Wk01](T3/1521/Tute2/Wk01)
+- [Wk01](T3/1521/Wk01)
 <!-- - [Wk03](T3/1521/Tute3/Wk03) -->
 <!-- - [Wk04](T3/1521/Tute4/Wk04) -->
 <!-- - [Wk05](T3/1521/Tute5/Wk05) -->
