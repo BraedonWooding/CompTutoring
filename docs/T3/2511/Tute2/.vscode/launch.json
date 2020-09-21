@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "cwd": "${workspaceRoot}",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Question Bank",
+            "request": "launch",
+            "vmArgs": "",
+            "mainClass": "question_bank.Cli",
+        }
+    ]
+}

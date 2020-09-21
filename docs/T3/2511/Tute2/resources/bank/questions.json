@@ -1,0 +1,54 @@
+[
+  {
+    "name": "mc",
+    "type": "select",
+    "options": {
+        "multiSelect": "true"
+    },
+    "variations": [
+      {
+        "easy": {
+          "name": "What is 1 + 2",
+          "options": ["3", "1", "0", "4"]
+        },
+        "medium": {
+            "name": "What is life?",
+            "options": ["Endless", "Perpetual", "42", "Frankie"]
+        }
+      }
+    ]
+  },
+  {
+    "name": "yes or no",
+    "type": "select",
+    "options": {
+        "multiSelect": "false"
+    },
+    "variations": [
+      {
+        "easy": {
+          "name": "Are you cool?",
+          "options": ["false", "falser"]
+        },
+        "medium": {
+            "name": "Iced Coffee?",
+            "options": ["Yes", "No"]
+        }
+      }
+    ]
+  },
+  {
+    "name": "short answer",
+    "type": "text",
+    "variations": [
+      {
+        "something": {
+          "name": "Explain micro-economics",
+          "options": {
+            "maxLength": "10"
+          }
+        }
+      }
+    ]
+  }
+]
