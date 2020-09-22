@@ -3,6 +3,7 @@ package work;
 // You can use 'Date' or string too but as a student mentioned LocalDate
 // is soooo much nicer to work with :)
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Employee {
     private String name;

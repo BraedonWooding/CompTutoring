@@ -4,10 +4,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Rectangle",
+            "request": "launch",
+            "mainClass": "example.Rectangle",
+            "projectName": "Tute2_3e42216b"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Question Bank",
             "request": "launch",
             "vmArgs": "",
-            "mainClass": "question_bank.Cli",
+            "mainClass": "question_bank.Cli"
         }
     ]
 }
