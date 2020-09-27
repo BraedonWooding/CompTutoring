@@ -1,8 +1,8 @@
 - [Introduction](_introduction)
 - **Tutorials**
 - [Wk01](T3/2511/Wk01)
-- [Wk02](T3/2511/Tute2/Wk02)
-<!-- - [Wk03](T3/2511/Tute3/Wk03) -->
+- [Wk02](T3/2511/Wk02)
+- [Wk03](T3/2511/Wk03)
 <!-- - [Wk04](T3/2511/Tute4/Wk04) -->
 - **Useful Links**
 - [BigO Tool](BigOh)
