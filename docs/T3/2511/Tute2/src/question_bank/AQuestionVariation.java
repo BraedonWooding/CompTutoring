@@ -8,17 +8,17 @@ public abstract class AQuestionVariation {
         this.name = name;
         this.title = title;
     }
-    
+
     public String GetName() {
         return this.name;
     }
-    
+
     public String GetTitle() {
         return this.title;
     }
-    
+
     public abstract Boolean IsValid(String option);
-    
+
     @Override
     public String toString() {
         return this.title;
