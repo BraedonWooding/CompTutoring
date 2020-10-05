@@ -9,6 +9,8 @@ EDIR=bin
 
 LIBS=-lm
 
+all: $(EDIR)/test
+
 _DEPS = cbench.h obsidian.h recursion.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
