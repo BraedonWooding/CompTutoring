@@ -22,7 +22,8 @@ main_loop_lt_than_10:
     bge     $t0, 10, main_loop_end
 
     # compute numbers + i
-    add		$t3, $t2, $t0
+    mult    $t3, $t0, 4
+    add		$t3, $t2, $t3
     lw      $t3, 0($t3)
     ble     $t3, $t1, main_loop_continue
     move    $t1, $t3
