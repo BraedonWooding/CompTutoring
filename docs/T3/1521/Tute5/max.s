@@ -14,42 +14,38 @@
 # }
 
 main:
-    la		$t2, numbers
+    li  $t0, 1       # i = 1
+    lw  $t1, numbers # max = *number
     
-    li      $t0, 1  # i = 1
-    lw      $t1, 0($t2)
-main_loop_lt_than_10:
-    bge     $t0, 10, main_loop_end
-
-    # compute numbers + i
-    mult    $t3, $t0, 4
-    add		$t3, $t2, $t3
-    lw      $t3, 0($t3)
-    ble     $t3, $t1, main_loop_continue
-    move    $t1, $t3
-
-main_loop_continue:    
-    add     $t0, $t0, 1
-    j       main_loop_lt_than_10
+main_loop:
+    bge $t0, 10, main_loop_end  # if (i < 10)
+    mul $t2, $t0, 4             # byte offset of i
+    add $t3, numbers, $t2       # addr = num + offset
+    lw  $t4, ($t3)              # t4 = *addr
+    
+    add $t0, $t0, 1             # i++
+    ble $t4, $t1, main_loop     # if (numbers[i] > max)
+    move $t1, $t4
+    j   main_loop
+    
 main_loop_end:
-
-# using a pointer
+    jr  $ra
 
 main:
-    la		$t0, numbers        # cur = first address initially
-    la      $t2, numbers + 10   # last address
-    lw      $t1, 0($t2)         # max
-main_loop_lt_than_10:
-    bge     $t0, $t2, main_loop_end
+    la  $t0, numbers    # cur = number
+    lw  $t1, 0($t0)     # max = *number
+    
+main_loop:
+    bge $t0, numbers + 40, main_loop_end  # if (cur < numbers + 40)
+    lw  $t2, ($t0)              # t2 = *cur
 
-    lw      $t3, 0($t0)                     # t3 = *cur
-    ble     $t3, $t1, main_loop_continue    # if (*cur > max) max = *cur
-    move    $t1, $t3
-
-main_loop_continue:
-    add     $t0, $t0, 4                     # (void*)(cur) + 4
-    j       main_loop_lt_than_10
+    add $t0, $t0, 4             # i++
+    ble $t4, $t1, main_loop     # if (numbers[i] > max)
+    move $t1, $t4
+    j   main_loop
+    
 main_loop_end:
+    jr  $ra
 
 .data
-numbers: .word 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+numbers: .word 0,1,2,3,4,5,6,7,8,9

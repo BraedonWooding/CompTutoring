@@ -5,6 +5,7 @@
 - [Wk03](T3/1521/Wk03)
 - [Wk04](T3/1521/Wk04)
 - [Wk05](T3/1521/Wk05)
+- [Wk05](T3/1521/Wk07)
 - **Useful Links**
 - [BigO Tool](BigOh)
 - [Home Computing](home_computing)

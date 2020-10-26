@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "cwd": "${workspaceRoot}",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EmphasisApplication",
+            "request": "launch",
+            "vmArgs": "--module-path ./lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "unsw.EmphasisApplication",
+            "projectName": "T3_cd9ba938"
+        }
+    ]
+}
