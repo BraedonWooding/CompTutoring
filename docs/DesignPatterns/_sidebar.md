@@ -1,9 +1,9 @@
 - [Introduction](_introduction)
 - **Patterns**
-- [Factory](Factory)
-- [Composite](Composite)
-- [Observer vs Events](Observer_Events)
-- [Strategy vs State](Strategy_State)
+- [Factory](DesignPatterns/Factory)
+- [Composite](DesignPatterns/Composite)
+- [Observer vs Events](DesignPatterns/Observer_Events)
+- [Strategy vs State](DesignPatterns/Strategy_State)
 <!-- - [Wk04](T3/2511/Tute4/Wk04) -->
 - **Useful Links**
 - [Design Patterns](DesignPatterns)
