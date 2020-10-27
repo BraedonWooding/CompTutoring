@@ -8,7 +8,7 @@
 - [Wk02](T3/2511/Wk07)
 <!-- - [Wk04](T3/2511/Tute4/Wk04) -->
 - **Useful Links**
-- [Design Patterns](DesignPatterns)
+- [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
 - [Home Computing](home_computing)
 - [GDB + Valgrind](gdb_valgrind)
