@@ -4,10 +4,6 @@ TLDR: Observer pattern is just a restricted event and is 'rarely' what you reall
 
 Often in our programming we want to be able to react to things! (WOW!)
 
-![meme1](https://images7.memedroid.com/images/UPLOADED756/5e1cf8d464f57.jpeg)
-
-> I'm a physicist so I'm sorry but couldn't find a relative CS meme haha
-
 Event based design is in some ways a 'programming paradigm' but in reality it's quite a small subset of one (outside of languages like Erlang) in a similar way to data oriented design (though that's actually commonly a misconception data oriented design especially when you get into transactional views get's quite cool!) so we'll count it as a pattern :).
 
 Anywho, events are pretty straightforward conceptually and most languages (C#) for example support them by default.  Java does not.  So we'll do all the work for them :).
