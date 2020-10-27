@@ -12,6 +12,7 @@ Let's begin by just defining a simple event that will trigger every time we send
 
 ```java
 public interface IDispatchListener {
+
     /**
      * We'll 'break' OOP a little here for security reasons
      * passing the entire Send object or even just trying to take
@@ -99,7 +100,7 @@ dispatcher.registerOnDispatch(new IDispatchListener() {
 
 This will ONLY work if there is only one function to implement
 
-> I'm not even sure if it'll compile here... even with the default method it may though :)
+> This will not compile here... even with the default method it may though :)
 
 This is very useful for your typical observers!
 
@@ -154,7 +155,7 @@ public final class Observable<T> {
      * 
      * @param listener A function to call every time the event fires.
      */
-    public void observe(ObservableListener<T> listener) {
+    public void observe(BiConsumer<T, T> listener) {
         listeners.add(listener);
     }
 
