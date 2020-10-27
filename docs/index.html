@@ -107,12 +107,14 @@
             })
             hook.doneEach(function (html) {  
               var base = document.location.hash.match(/#(?:\/)?(.*?)\/(.*?)\/.*/);
-              base = base[1] + '/' + base[2];
-              for (item of document.querySelectorAll('.downloadable')) {
-                var link = item.getAttribute("download-link");
-                var pre = item.querySelector('pre');
-                pre.setAttribute('data-download-file', '');
-                pre.setAttribute('link-src', base + '/' + link);
+              if (base) {
+                base = base[1] + '/' + base[2];
+                for (item of document.querySelectorAll('.downloadable')) {
+                  var link = item.getAttribute("download-link");
+                  var pre = item.querySelector('pre');
+                  pre.setAttribute('data-download-file', '');
+                  pre.setAttribute('link-src', base + '/' + link);
+                }
               }
               Prism.highlightAll();
             })
@@ -149,7 +151,6 @@
   <script>
     Prism.plugins.toolbar.registerButton('download-file', function (env) {
   		var pre = env.element.parentNode;
-  		console.log("HERE");
   		if (!pre || !/pre/i.test(pre.nodeName) || !pre.hasAttribute('data-download-file')) {
   			return;
   		}
