@@ -1,3 +1,3 @@
-# COMP 2511 T2
+# COMP 2511 T3
 
 Click on tutorials on left

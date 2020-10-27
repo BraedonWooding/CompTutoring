@@ -4,6 +4,7 @@
     - [Comp1521 T3](T3/1521/)
     - [Comp2511 T3](T3/2511/)
 - **Useful Links**
+- [Design Patterns](DesignPatterns)
 - [BigO Tool](BigOh)
 - [Home Computing](home_computing)
 - [GDB + Valgrind](gdb_valgrind)

@@ -7,6 +7,7 @@
 - [Wk05](T3/1521/Wk05)
 - [Wk05](T3/1521/Wk07)
 - **Useful Links**
+- [Design Patterns](DesignPatterns)
 - [BigO Tool](BigOh)
 - [Home Computing](home_computing)
 - [GDB + Valgrind](gdb_valgrind)
