@@ -86,7 +86,7 @@ Jump deserialize(JSONObject json) {
     try {
         Class<?> jumpClass = Class.forName("unsw.whatever." + className);
         Method method = jumpClass.getMethod("deserialize", JSONObject.class);
-        return (Jump) jumpCtor.invoke(null, json);
+        return (Jump) method.invoke(null, json);
     } catch (Exception e) {
         // class didn't exist or something handle it!
         // or...
