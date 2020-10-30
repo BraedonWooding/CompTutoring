@@ -1,17 +1,17 @@
 nrows = 4
 ncols = 4
-sizeOfRow = 16
+sizeOfRow = 16  # colsize * sizeof(int)
 
 index_matrix:
     # $a0 = row, $a1 = col
-    # ((sizeof(int) * ncols * row) + col * sizeof(int)) + M
-    mul     $t0, $a0, sizeOfRow    # nrows * row * sizeof(int)
-    mul     $a1, $a1, 4            # sizeof(int) * col
-    add     $t0, $t0, $a1		   # ((sizeof(int) * ncols * row) + col * sizeof(int))
-    la      $t1, M
-    add     $t0, $t0, $t1          # ((sizeof(int) * ncols * row) + col * sizeof(int)) + M
-    lw      $v0, ($t0)
-    jr		$ra					   # return
+    # (row * colsize * sizeof(int)) + col * sizeof(int)
+    mul     $t0, $a0, sizeOfRow # (row * colsize * sizeof(int))
+    mul     $t1, $a1, 4         # col * sizeof(int)
+    add     $t0, $t0, $t1
+    la		$t2, M		        # starting offset of array M
+    add     $t0, $t0, $t2
+    lw      $v0, ($t0)          # array[row][col]
+    jr      $ra
 
 .data
 M:
