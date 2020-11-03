@@ -6,6 +6,7 @@
 - [Wk04](T3/1521/Wk04)
 - [Wk05](T3/1521/Wk05)
 - [Wk07](T3/1521/Wk07)
+- [Wk08](T3/1521/Wk08)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
