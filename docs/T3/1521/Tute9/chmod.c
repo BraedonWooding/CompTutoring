@@ -13,6 +13,16 @@ int main(int argc, char *argv[]) {
             perror(argv[i]);
             exit(1);
         }
+        
+        mode_t mode = s.st_mode;
+        if ((mode & S_IWOTH) != 0) {
+            mode = mode & ~S_IWOTH;
+        }
+        
+        if (chmod(argv[i], mode) != 0) {
+            perror(argv[i]);
+            exit(1);
+        }
     }
 
     return 0;
