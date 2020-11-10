@@ -44,52 +44,47 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
     
-    for (int i = 2; i < argc; i += 3) {
+    for (int arg = 2; arg < argc; arg += 3) {
         char *endptr = NULL;
-        long start = strtol(argv[i], &endptr, 10);
+        int start = (int)strtol(argv[arg], &endptr, 10);
         if (!endptr || *endptr != '\0') {
-            printf("%s is not a number\n", argv[i]);
+            fprintf(stderr, "Error: not a number %s\n", argv[arg]);
             usage();
             exit(1);
         }
         
         endptr = NULL;
-        long end = strtol(argv[i + 1], &endptr, 10);
+        int end = (int)strtol(argv[arg + 1], &endptr, 10);
         if (!endptr || *endptr != '\0') {
-            printf("%s is not a number\n", argv[i + 1]);
+            fprintf(stderr, "Error: not a number %s\n", argv[arg + 1]);
             usage();
             exit(1);
         }
         
-        char *filename_out = argv[i + 2];
-        FILE *f_out = fopen(filename_out, "w");
-        if (f_out == NULL) {
-            perror(filename_out);
-            usage();
-            exit(1);
-        }
+        FILE *f_out = fopen(argv[arg + 2], "w");
         
-        int cur = 1;
-        while (cur < start) {
-            // 0 <-> 255
-            // also -1
+        int line = 1;
+        while (line < start) {
             int c = fgetc(f_in);
-            if (c == '\n') cur++;
-            else if (c == EOF) break;
-        }
-        
-        while (cur < end) {
-            int c = fgetc(f_in);
-            if (c == '\n') cur++;
-            else if (c == EOF) break;
-
-            if (cur < end) {
-                fputc(c, f_out);
+            if (c == EOF) {
+                break;
+            } else if (c == '\n') {
+                line++;
             }
+        }
+        
+        while (line < end) {
+            int c = fgetc(f_in);
+            if (c == EOF) {
+                break;
+            } else if (c == '\n') {
+                line++;
+            }
+            
+            if (line < end) fputc(c, f_out);
         }
 
         rewind(f_in);
-        fclose(f_out);
     }
     
     fclose(f_in);
