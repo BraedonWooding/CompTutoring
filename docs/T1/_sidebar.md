@@ -1,7 +1,6 @@
 - [Introduction](_introduction)
 - **Subjects**
-- [COMP1521](T3/1521/)
-- [COMP2511](T3/2511/)
+- [COMP2521](T1/2521/)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
