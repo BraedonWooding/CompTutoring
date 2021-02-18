@@ -4,6 +4,7 @@
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
+- [Makefiles](Makefiles)
 - [Home Computing](home_computing)
 - [GDB + Valgrind](gdb_valgrind)
 - [FileIO in C](FileIO_Files/ExampleFileReading)
