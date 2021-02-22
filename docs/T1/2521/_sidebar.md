@@ -1,6 +1,7 @@
 - [Introduction](_introduction)
 - **Tutorials**
 - [Wk01](T1/2521/Wk01)
+- [Wk02](T1/2521/Wk02)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)

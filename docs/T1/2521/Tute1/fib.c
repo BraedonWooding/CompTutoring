@@ -56,7 +56,7 @@ int fib_upwards(int n) {
 int fib_memo(int n) {
     // initialised to 1, 1 followed by zeros
     // zeroes mean no calcuated value for that 'n'
-    static int fib_array[250] = {1, 1};
+    static int fib_array[100000] = {1, 1};
 
     // if it has a value, fib_array[n] will be non-zero
     if (fib_array[n] == 0) {

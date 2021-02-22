@@ -14,7 +14,7 @@ all: $(EDIR)/test
 _DEPS = cbench.h obsidian.h recursion.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = tests.o fib.o 
+_OBJ = tests.o fib.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
