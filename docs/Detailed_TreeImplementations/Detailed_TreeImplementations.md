@@ -17,13 +17,6 @@
 </details>
 
 <details>
-<summary>AVL</summary>
-
-[](AVL.c ':include :type=code c')
-
-</details>
-
-<details>
 <summary>RedBlack</summary>
 
 [](RedBlack.c ':include :type=code c')
