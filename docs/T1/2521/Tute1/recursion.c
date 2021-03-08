@@ -22,8 +22,17 @@ int len(struct LL *cur) {
 }
 
 int sum_while(struct LL *cur) {
-
+    int sum = 0;
+    while (cur != NULL) {
+        sum += cur->data;
+        cur = cur ->next;
+    }
+    return sum;
 }
 
 int sum(struct LL *cur) {
+    if (cur == NULL) return 0;
+    // if (cur->next == NULL) return cur->data;
+    // if (cur->next->next == NULL) return cur->data + cur->next->data;
+    return cur->data + sum(cur->next);
 }
