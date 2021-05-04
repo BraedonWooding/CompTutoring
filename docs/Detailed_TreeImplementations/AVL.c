@@ -17,7 +17,7 @@ struct avl_node_t {
  */
 int height(AVLNode *n) {
     if (n == NULL) {
-        return 0;
+        return -1;
     } else {
         int left = height(n->left);
         int right = height(n->right);
