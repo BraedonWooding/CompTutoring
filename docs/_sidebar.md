@@ -1,7 +1,8 @@
 - [Introduction](_introduction)
 - **Trimesters**
-- [T1](T1/)
-    - [Comp2521 T1](T1/2521/)
+- [T2](T2/)
+    - [Comp2521 T2](T2/2521/)
+    - [Comp2511 T2](T2/2511/)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
