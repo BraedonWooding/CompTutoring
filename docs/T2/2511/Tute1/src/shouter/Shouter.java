@@ -1,4 +1,4 @@
-package shouter.unsw;
+package shouter;
 
 public class Shouter {
     private String message;

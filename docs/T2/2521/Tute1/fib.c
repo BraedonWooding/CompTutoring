@@ -1,5 +1,7 @@
 #include "recursion.h"
 
+#include <stdlib.h>
+#include <stdbool.h>
 
 /*
                              fib(5)
@@ -33,11 +35,15 @@
  */
 
 int fib_rec(int n) {
+  return 0;
 }
 
 // 1, 1, 2, 3, 5, 8, 13, ...
 
 int fib_upwards(int n) {
+  return 0;
 }
 
 int fib_memo(int n) {
+  return 0;
+}
