@@ -1,32 +1,44 @@
-struct Shouter {
-    char *message;
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 
-    void(*shouter_say)(struct Shouter*);
+struct Shouter {
+    char *msg;
+
+    struct _VTable {
+        char*(*getMsg)(struct Shouter*);
+        void(*setMsg)(struct Shouter*, char *);
+        void(*shouterMsg)(struct Shouter*, int args[]);
+    } *_vtable;
 };
 
-void shouter_init(struct Shouter *this, char *message) {
-    this->shouter_say = shouter_say;
-
-    this->message = message;
+char *getMsg(struct Shouter *self) {
+    return self->msg;
 }
 
-void shouter_subclass_init(struct Shouter *this, char *message) {
-    this->shouter_say = shouter_say_out;
-
-    this->message = message;
+char *getBabyMsg(struct Shouter *self) {
+    return "Goo Gahh Baby";
 }
 
-void shouter_say_out(struct Shouter *this) {
-    fprintf(stdout, "%s", this->message);
+const struct _VTable _shouterVtable = {
+    .getMsg = getMsg
+};
+
+const struct _VTable _babyShouterVtable = {
+    .getMsg = getBabyMsg
+};
+
+void baby_shouter_init(struct Shouter *self, char *msg) {
+    self->_vtable = &_babyShouterVtable;
+    self->msg = msg;
 }
 
-void shouter_say(struct Shouter *this) {
-    fprintf(stderr, "%s", this->message);
+void shouter_init(struct Shouter *self, char *msg) {
+    self->_vtable = &_shouterVtable;
+    self->msg = msg;
 }
 
 int main(void) {
     struct Shouter *shouter = malloc(sizeof(*shouter));
-    shouter_init(shouter, "Hello World!");
-    shouter_say(shouter);
-
+    baby_shouter_init(shouter, "Hello World!");
 }

@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "stdbool.h": "c"
-    }
+    },
+    "java.project.sourcePaths": [
+        "docs/T2/2511/Tute1/src"
+    ]
 }
