@@ -11,6 +11,11 @@ public class Rectangle extends Shape {
 
         System.out.println("Inside rectangle constructor");
     }
+
+    @Override
+    public String GetColorName() {
+        return "red";
+    }
     
     public void changeWidth(int width) {
         this.width = width;
@@ -30,7 +35,9 @@ public class Rectangle extends Shape {
     }
     
     public static void main(String[] args) {
-        Rectangle r = Rectangle.GetRedRectangle(10, 20);
-        System.out.println(r.GetArea());
+        // Rectangle r = Rectangle.GetRedRectangle(10, 20);
+        // System.out.println(r.GetArea());
+
+        Shape s = new Rectangle("Red", 20, 10);
     }
 }

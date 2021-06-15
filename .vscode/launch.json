@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch SpeedValidatorExamples",
+            "request": "launch",
+            "mainClass": "example.SpeedValidatorExamples",
+            "projectName": "CompTutoring_5875e1d6"
+        },
+        {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",

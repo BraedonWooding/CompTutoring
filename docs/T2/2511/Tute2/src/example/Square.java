@@ -1,5 +1,7 @@
 package example;
 
+import java.util.List;
+
 public class Square extends Shape {
     private int length;
 
