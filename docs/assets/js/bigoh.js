@@ -79,6 +79,7 @@ var examples = {
   end for`
 }
 
+var list = document.getElementById("listOfGists");
 for (var example in examples) {
   let file = examples[example];
   window.gists[example] = file;
