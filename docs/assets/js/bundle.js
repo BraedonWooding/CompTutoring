@@ -38,6 +38,57 @@ usr.listGists((err, gists) => {
     }
 });
 
+// Extra examples... (hard coded because I don't want to update gists)
+var examples = {
+  "BinaryConversion": `S = init 0
+  n = rand
+  while n > 0 do
+    tmp = n % 2
+    push tmp S
+    n = floor (n / 2)
+  end while`,
+  "PrintPermutationSlow": `A = rand n
+  P = init 0
+  
+  for all i = 0 up to n do
+    item = randrange 0 (n - 1)
+    push item P
+  endfor
+  
+  for all i = 0 up to n do
+    for all j = 0 up to n do
+      if P[j] = i then
+          print A[j]
+      endif
+    endfor
+  endfor`,
+  "PrintPermutationFast": `A = rand n
+  P = init 0
+  T = init n
+  
+  for all i = 0 up to n - 1 do
+    item = randrange 0 (n - 1)
+    push item P
+  endfor
+  
+  for all i = 0 up to n - 1 do
+    set T (P[i] - 1) A[i]
+  end for
+    
+  for all i = 0 up to n - 1 do
+    print T[i]
+  end for`
+}
+
+for (var example in examples) {
+  let file = examples[example];
+  window.gists[example] = file;
+  var opt = document.createElement("option");
+  opt.value = example;
+  opt.text = example;
+  list.appendChild(opt);
+}
+
 window.changeGist = () => {
     var opt = document.getElementById("listOfGists").value;
     editor.setValue(window.gists[opt]);
@@ -188,7 +239,7 @@ function addIf(tokens, ast) {
 }
 
 keywords = ["endfor", "else", "elif", "endif", "endwhile", "done", "next", "end", "for", "while", "if", "then"]
-valid_calls = ["print", "pop", "enqueue", "push", "dequeue", "rand", "empty", "length", "floor", "ceil", "abs", "sort", "init", "sqrt", "randrange"]
+valid_calls = ["print", "pop", "enqueue", "push", "dequeue", "rand", "empty", "length", "floor", "ceil", "abs", "sort", "init", "sqrt", "randrange", "set"]
 calls = {
   "print": ((val) => {;}),
   "pop": ((from) => { return from.value.pop(); }),
@@ -204,6 +255,7 @@ calls = {
   "sort": ((val) => { val.value.sort((a, b) => a.value - b.value); }),
   "init": ((len) => { return {"value": Array.from({length: len.value}, () => {return {"value": 0};})}; }),
   "sqrt": ((x) => { return {"value": Math.sqrt(x.value)}; }),
+  "set": ((arr, index, value) => { arr.value[Math.trunc(index)] = value; }),
   "randrange": ((low, high) => { return {"value": Math.floor(Math.random() * (high.value - low.value) + low.value)}; }),
 }
 
