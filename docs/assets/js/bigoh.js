@@ -35,6 +35,14 @@ usr.listGists((err, gists) => {
             });
         }
     }
+    for (var example in examples) {
+      let file = examples[example];
+      window.gists[example] = file;
+      var opt = document.createElement("option");
+      opt.value = example;
+      opt.text = example;
+      list.appendChild(opt);
+    }
 });
 
 // Extra examples... (hard coded because I don't want to update gists)
@@ -77,16 +85,6 @@ var examples = {
   for all i = 0 up to n - 1 do
     print T[i]
   end for`
-}
-
-var list = document.getElementById("listOfGists");
-for (var example in examples) {
-  let file = examples[example];
-  window.gists[example] = file;
-  var opt = document.createElement("option");
-  opt.value = example;
-  opt.text = example;
-  list.appendChild(opt);
 }
 
 window.changeGist = () => {
