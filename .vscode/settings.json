@@ -4,7 +4,11 @@
     },
     "java.project.sourcePaths": [
         "docs/T2/2511/Tute1/src",
-        "docs/T2/2511/Tute2/src"
+        "docs/T2/2511/Tute2/src",
+        "docs/T2/2511/Tute3/src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
     ],
     "editor.fontSize": 16
 }
