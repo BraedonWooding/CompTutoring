@@ -94,19 +94,6 @@ window.changeGist = () => {
     editor.clearSelection();
 }
 
-function createGist(name, content) {
-    let gist = gh.getGist();
-    gist.create({
-        "public": true,
-        "description": 'A gist for Big Oh',
-        "files": {
-            [name]: {
-                "content": content
-            }
-        }
-    });
-}
-
 function editGist(name, newName, content) {
     let gist = gh.getGist();
     gist.update({
