@@ -4,18 +4,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class TrainingSystem {
-
-    public List<Trainer> trainers;
+    private List<Seminar> seminars;
 
     public LocalDate bookTraining(String employee, List<LocalDate> availability) {
-        for (Trainer trainer : trainers) {
-            for (Seminar seminar : trainer.getSeminars()) {
-                for (LocalDate available : availability) {
-                    if (seminar.getStart().equals(available) &&
-                            seminar.getAttendees().size() < 10) {
-                        seminar.getAttendees().add(employee);
-                        return available;
-                    }
+        for (LocalDate available : availability) {
+            for (Seminar seminar : seminars) {
+                if (seminar.canBook(employee, available)) {
+                    return available;
                 }
             }
         }

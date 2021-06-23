@@ -1,5 +1,6 @@
 package unsw.training;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -12,10 +13,4 @@ public class Trainer {
 
     private String name;
     private String room;
-
-    private List<Seminar> seminars;
-
-    public List<Seminar> getSeminars() {
-        return seminars;
-    }
 }

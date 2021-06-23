@@ -67,4 +67,55 @@ public class ArchaicFsTest {
     // - File Writing/Reading with various options (appending for example)
     // - Cd'ing .. on the root most directory (shouldn't error should just remain on root directory)
     // - many others...
+
+    @Test
+    public void testReadFilePaths() {
+        ArchaicFileSystem fs = new ArchaicFileSystem();
+
+        assertDoesNotThrow(() -> {
+            fs.mkdir("/usr/data/myfile", true, false);
+            fs.writeToFile("/usr/data/myfile/file.txt", "F13A - Tute", EnumSet.of(FileWriteOptions.CREATE, FileWriteOptions.TRUNCATE));
+            assertEquals("F13A - Tute", fs.readFromFile("/usr/data/myfile/file.txt"));
+            assertEquals("", fs.cwd());
+            fs.cd("/usr/data/myfile");
+            assertEquals("/usr/data/myfile", fs.cwd());
+            assertEquals("F13A - Tute", fs.readFromFile("file.txt"));
+        });
+    }
+
+    @Test
+    public void testCdToFile() {
+        ArchaicFileSystem fs = new ArchaicFileSystem();
+
+        assertThrows(NoSuchFileException.class, () -> {
+            fs.writeToFile("test.txt", "My Content", EnumSet.of(FileWriteOptions.CREATE, FileWriteOptions.TRUNCATE));
+            fs.cd("test.txt");
+        });
+    }
+    
+    @Test
+    public void testAppend() {
+        ArchaicFileSystem fs = new ArchaicFileSystem();
+
+        assertDoesNotThrow(() -> {
+            fs.writeToFile("file.txt", "F13A - Tute", EnumSet.of(FileWriteOptions.CREATE, FileWriteOptions.TRUNCATE));
+            assertEquals("F13A - Tute", fs.readFromFile("/usr/data/myfile/file.txt"));
+            assertEquals("", fs.cwd());
+            fs.writeToFile("file.txt", "F13A - Tute", EnumSet.of(FileWriteOptions.APPEND));
+            assertEquals("F13A - TuteF13A - Tute", fs.readFromFile("/usr/data/myfile/file.txt"));
+        });
+    }
+
+    @Test
+    public void testNoRealChangeButSemanticChangeInPath() {
+        // a/b/c
+        // a/b/c/.. => a/b
+        // a/b/c -> cd d/..
+
+        ArchaicFileSystem fs = new ArchaicFileSystem();
+
+        assertThrows(NoSuchFileException.class, () -> {
+            fs.cd("does-not-exist/..");
+        });
+    }
 }

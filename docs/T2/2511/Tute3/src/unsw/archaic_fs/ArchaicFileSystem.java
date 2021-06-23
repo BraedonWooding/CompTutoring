@@ -40,7 +40,7 @@ public class ArchaicFileSystem {
         }
     }
 
-    public Inode lookupInode(int inode) {
+    private Inode lookupInode(int inode) {
         if (inode >= 0 && inode < inodeLookup.size()) {
             return inodeLookup.get(inode);
         } else {
@@ -73,7 +73,7 @@ public class ArchaicFileSystem {
         }
     }
 
-    public void reformPathForInode(Inode inode, int stop) {
+    private void reformPathForInode(Inode inode, int stop) {
         if (inode.getParentInode() == stop) {
             return;
         } else {
@@ -108,7 +108,7 @@ public class ArchaicFileSystem {
         return currentPath.get(currentPath.size() - 1);
     }
 
-    public void mkdir(String path, boolean createParentDirectories, boolean ignoreIfExists) throws IOException {
+    private void mkdir(String path, boolean createParentDirectories, boolean ignoreIfExists) throws IOException {
         // not really fast at all, but simple...
         Inode current = topPathComponent();
 
