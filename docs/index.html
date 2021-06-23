@@ -1,102 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>UNSW Comp Tutoring</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Tutorial Content for UNSW Comp Tutoring">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" title="Simple">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/toolbar/prism-toolbar.css">
-  <header data-plugin-header="line-numbers"></header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>UNSW Comp Tutoring</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Tutorial Content for UNSW Comp Tutoring"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
+    />
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+      title="Simple"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/toolbar/prism-toolbar.css"
+    />
+    <header data-plugin-header="line-numbers"></header>
 
-  <style>
-    /*  
+    <style>
+      /*  
      * Fix line number in code block. 
      * Change this overflow attr to <pre> not the <code>.
      */
-    .markdown-section pre[data-lang] {
+      .markdown-section pre[data-lang] {
         overflow: auto !important;
-    }
-    .markdown-section pre[data-lang] code {
+      }
+      .markdown-section pre[data-lang] code {
         overflow: visible;
-    }
-    
-    .markdown-section pre[data-lang] code {
-      padding: 1em 0;
-    }
-    
-    .line-numbers .line-numbers-rows {
-      border-right : 2px solid white;
-      /* Fix paddings to align with code.*/
-      padding: 1em 0; /* Same as code block */
-    }
-  
-    :root {
+      }
+
+      .markdown-section pre[data-lang] code {
+        padding: 1em 0;
+      }
+
+      .line-numbers .line-numbers-rows {
+        border-right: 2px solid white;
+        /* Fix paddings to align with code.*/
+        padding: 1em 0; /* Same as code block */
+      }
+
+      :root {
         --docsify-example-panels-document-width: 100%; /* Remove margins */
-        --docsify-example-panels-left-panel-width : 50%; /* bit more for left */
-        --docsify-example-panels-right-panel-width : 50%; /* bit less for right */
-    }
-    iframe {
+        --docsify-example-panels-left-panel-width: 50%; /* bit more for left */
+        --docsify-example-panels-right-panel-width: 50%; /* bit less for right */
+      }
+      iframe {
         border: 0;
         height: 500px;
         left: 20;
         position: relative;
         top: 10;
         width: 100%;
-    }
-  </style>
+      }
+    </style>
 
-  <!-- Alternate Stylesheets -->
-  <!--<link rel="stylesheet alternate" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css" title="Defaults">
+    <!-- Alternate Stylesheets -->
+    <!--<link rel="stylesheet alternate" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css" title="Defaults">
   <link rel="stylesheet alternate" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="Simple Dark">
-  -->
-</head>
-<body class="line-numbers">
-  <div id="app"></div> 
-  <script>
+  --></head>
+  <body class="line-numbers">
+    <div id="app"></div>
+    <script>
       // Docsify
-      window.$docsify = { 
-          // GENERAL
-          // -----------------------------------------------------------------
-          name       : 'Braedon\'s Comp Tutoring',
-          repo       : 'https://github.com/BraedonWooding/CompTutoring',
-          coverpage  : '_coverpage.md',
-          homepage   : '_introduction.md',
-          loadSidebar: true,
-          auto2top   : true,
-          maxLevel   : 3,
-          subMaxLevel: 3,
-          // PLUGINS
-          // -----------------------------------------------------------------
-          executeScript: true,
-          search: {
-              depth      : 3,
-              noData     : 'No results!',
-              placeholder: 'Search...'
-          },
-          markdown: {
-            smartypants: true,
-            gfm: true,
-            breaks: true,
-            renderer: {
-              /* Change code block rendering. Add line-numbers class.*/
-              code: function (code, lang = 'markup') {
-                const langOrMarkup = Prism.languages[lang] || Prism.languages.markup;                
-                const text = Prism.highlight(
-                  code.replace(/@DOCSIFY_QM@/g, '`'),
-                  langOrMarkup,
-                  lang
-                );
-                return `<pre data-download-file language="${lang}" v-pre data-lang="" class="line-numbers"><code class="line-numbers lang-${lang}">${text}</code></pre>`;
+      window.$docsify = {
+        // GENERAL
+        // -----------------------------------------------------------------
+        name: "Braedon's Comp Tutoring",
+        repo: "https://github.com/BraedonWooding/CompTutoring",
+        coverpage: "_coverpage.md",
+        homepage: "_introduction.md",
+        loadSidebar: true,
+        auto2top: true,
+        maxLevel: 3,
+        subMaxLevel: 3,
+        // PLUGINS
+        // -----------------------------------------------------------------
+        executeScript: true,
+        search: {
+          depth: 3,
+          noData: "No results!",
+          placeholder: "Search...",
+        },
+        markdown: {
+          smartypants: true,
+          gfm: true,
+          breaks: true,
+          renderer: {
+            /* Change code block rendering. Add line-numbers class.*/
+            code: function (code, lang = "markup", base = null) {
+              var pdf_renderer = function (code, lang, verify) {
+                function unique_id_generator() {
+                  function rand_gen() {
+                    return Math.floor((Math.random() + 1) * 65536)
+                      .toString(16)
+                      .substring(1);
+                  }
+                  return (
+                    rand_gen() +
+                    rand_gen() +
+                    "-" +
+                    rand_gen() +
+                    "-" +
+                    rand_gen() +
+                    "-" +
+                    rand_gen() +
+                    "-" +
+                    rand_gen() +
+                    rand_gen() +
+                    rand_gen()
+                  );
+                }
+                if (
+                  lang &&
+                  !lang.localeCompare("pdf", "en", { sensitivity: "base" })
+                ) {
+                  if (verify) {
+                    return true;
+                  } else {
+                    var divId =
+                      "markdown_code_pdf_container_" +
+                      unique_id_generator().toString();
+                    var container_list = new Array();
+                    if (localStorage.getItem("pdf_container_list")) {
+                      container_list = JSON.parse(
+                        localStorage.getItem("pdf_container_list")
+                      );
+                    }
+                    container_list.push({ pdf_location: code, div_id: divId });
+                    localStorage.setItem(
+                      "pdf_container_list",
+                      JSON.stringify(container_list)
+                    );
+                    return (
+                      '<div style="margin-top:' +
+                      PDF_MARGIN_TOP +
+                      "; margin-bottom:" +
+                      PDF_MARGIN_BOTTOM +
+                      ';" id="' +
+                      divId +
+                      '">' +
+                      '<a href="' +
+                      code +
+                      '"> Link </a> to ' +
+                      code +
+                      "</div>"
+                    );
+                  }
+                }
+                return false;
+              };
+              if (pdf_renderer(code, lang, true)) {
+                return pdf_renderer(code, lang, false);
               }
-            }
+              const langOrMarkup =
+                Prism.languages[lang] || Prism.languages.markup;
+              const text = Prism.highlight(
+                code.replace(/@DOCSIFY_QM@/g, "`"),
+                langOrMarkup,
+                lang
+              );
+              return `<pre data-download-file language="${lang}" v-pre data-lang="" class="line-numbers"><code class="line-numbers lang-${lang}">${text}</code></pre>`;
+            },
           },
-          plugins: [
+        },
+        plugins: [
           function (hook, vm) {
             hook.beforeEach(function (h) {
               h = h.replace(
@@ -104,103 +188,123 @@
                 "<div class='downloadable' download-link=$1>\n\n[]($1 ':include :type=code $2')\n\n</div>"
               );
               return h;
-            })
-            hook.doneEach(function (html) {  
-              var base = document.location.hash.match(/#(?:\/)?(.*?)\/(.*?)\/.*/);
+            });
+            hook.doneEach(function (html) {
+              var base = document.location.hash.match(
+                /#(?:\/)?(.*?)\/(.*?)\/.*/
+              );
               if (base) {
-                base = base[1] + '/' + base[2];
-                for (item of document.querySelectorAll('.downloadable')) {
+                base = base[1] + "/" + base[2];
+                for (item of document.querySelectorAll(".downloadable")) {
                   var link = item.getAttribute("download-link");
-                  var pre = item.querySelector('pre');
-                  pre.setAttribute('data-download-file', '');
-                  pre.setAttribute('link-src', base + '/' + link);
+                  var pre = item.querySelector("pre");
+                  pre.setAttribute("data-download-file", "");
+                  pre.setAttribute("link-src", base + "/" + link);
                 }
               }
               Prism.highlightAll();
-            })
-          }
-        ]
+            });
+          },
+        ],
       };
-  </script>
-  
-  <script src="assets/js/chart.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-mips.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-makefile.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-asm6502.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-haskell.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-example-panels@1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/toolbar/prism-toolbar.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/show-language/prism-show-language.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
-  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+    </script>
 
-  <script>
-    Prism.plugins.toolbar.registerButton('download-file', function (env) {
-  		var pre = env.element.parentNode;
-  		if (!pre || !/pre/i.test(pre.nodeName) || !pre.hasAttribute('data-download-file')) {
-  			return;
-  		}
-  		var src = pre.getAttribute('link-src');
-  		var a = document.createElement('a');
-  		a.style = "text-decoration: none;"
-  		if (src == null) {
-  		  exts = {
-  		    "mips": '.s',
-  		    "c": '.c',
-  		    "java": '.java'
-  		  };
-  		  src = "data:text/plain;charset=utf-8," + encodeURIComponent(env.element.innerText);
-  		  a.setAttribute('download', "example" + (exts[pre.getAttribute("language")] || "." + pre.getAttribute("language")));
-  		} else {
-  		  a.setAttribute('download', '');
-  		}
-  		
-  		a.textContent = pre.getAttribute('data-download-file-label') || 'Download';
-  		a.href = src;
-  		return a;
-  	});
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-mips.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-makefile.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-asm6502.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-haskell.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-example-panels@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/show-language/prism-show-language.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+    <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
 
-    Prism.languages.mips = {
-  	'comment': /#.*$/m,
-  	'string': /(["'`])(?:\\.|(?!\1)[^\\\r\n])*\1/,
-  	'keyword': [
-  		/\.(?:text|data|stack|k_text|k_data|asciiz|rdata|align|ascii|space|byte|half|word|float|double|globl)/i,
-  	],
-    'label': {
-  		pattern: /(\s*)[A-Za-z\_\d]*:/mgi,
-  		lookbehind: true,
-  		alias: 'constant'
-  	},
-    'opcode': {
-      pattern: /\b(?:SLL|SRL|SRA|SLLV|SRLV|SRAV|JR|JALR|SYSCALL|BREAK|MFHI|MTHI|MFLO|MTLO|MULT|MULTU|DIV|DIVU|ADD|ADDU|SUB|SUBU|AND|OR|XOR|NOR|SLT|SLTU|BLTZ|BGEZ|BEQ|BNE|BLEZ|BGTZ|ADDI|ADDIU|SLTI|SLTIU|ANDI|ORI|XORI|LUI|LB|LH|LW|LBU|LHU|SB|SH|SW|LWC1|SWC1|J|JAL|NOP|MOVE|B|BEQ|BNE|BEQZ|BGE|BGEU|BLT|BLTU|BLE|BLEU|BGT|BGTU|NEG|NOT|MUL|DIV|LI|LA|ADD|ADDU|ADDIU|SUB|SUBU|AND|SEQ|SNE|SGE|SGT|SLT)\b/i,
-      alias: 'function'
-    },
-  	'register': {
-  		pattern: /\(?\$(?:\d+|ra|sp|t\d|s\d|gp|fp|at|k\d|zero|v\d|a\d|f\d+)\)?/i,
-  		alias: 'variable'
-  	},
-  	'number': /(?:\b|(?=\$))(?:0[hx][\da-f]*\.?[\da-f]+(?:p[+-]?\d+)?|\d[\da-f]+[hx]|\$\d[\da-f]*|0[oq][0-7]+|[0-7]+[oq]|0[by][01]+|[01]+[by]|0[dt]\d+|\d*\.?\d+(?:\.?e[+-]?\d+)?[dt]?)\b/i,
-  	'operator': /[\[\]*+\-\/%<>=&|$!]/
-  };
-  </script>
-</body>
+    <script>
+      Prism.plugins.toolbar.registerButton("download-file", function (env) {
+        var pre = env.element.parentNode;
+        if (
+          !pre ||
+          !/pre/i.test(pre.nodeName) ||
+          !pre.hasAttribute("data-download-file")
+        ) {
+          return;
+        }
+        var src = pre.getAttribute("link-src");
+        var a = document.createElement("a");
+        a.style = "text-decoration: none;";
+        if (src == null) {
+          exts = {
+            mips: ".s",
+            c: ".c",
+            java: ".java",
+          };
+          src =
+            "data:text/plain;charset=utf-8," +
+            encodeURIComponent(env.element.innerText);
+          a.setAttribute(
+            "download",
+            "example" +
+              (exts[pre.getAttribute("language")] ||
+                "." + pre.getAttribute("language"))
+          );
+        } else {
+          a.setAttribute("download", "");
+        }
+
+        a.textContent =
+          pre.getAttribute("data-download-file-label") || "Download";
+        a.href = src;
+        return a;
+      });
+
+      Prism.languages.mips = {
+        comment: /#.*$/m,
+        string: /(["'`])(?:\\.|(?!\1)[^\\\r\n])*\1/,
+        keyword: [
+          /\.(?:text|data|stack|k_text|k_data|asciiz|rdata|align|ascii|space|byte|half|word|float|double|globl)/i,
+        ],
+        label: {
+          pattern: /(\s*)[A-Za-z\_\d]*:/gim,
+          lookbehind: true,
+          alias: "constant",
+        },
+        opcode: {
+          pattern:
+            /\b(?:SLL|SRL|SRA|SLLV|SRLV|SRAV|JR|JALR|SYSCALL|BREAK|MFHI|MTHI|MFLO|MTLO|MULT|MULTU|DIV|DIVU|ADD|ADDU|SUB|SUBU|AND|OR|XOR|NOR|SLT|SLTU|BLTZ|BGEZ|BEQ|BNE|BLEZ|BGTZ|ADDI|ADDIU|SLTI|SLTIU|ANDI|ORI|XORI|LUI|LB|LH|LW|LBU|LHU|SB|SH|SW|LWC1|SWC1|J|JAL|NOP|MOVE|B|BEQ|BNE|BEQZ|BGE|BGEU|BLT|BLTU|BLE|BLEU|BGT|BGTU|NEG|NOT|MUL|DIV|LI|LA|ADD|ADDU|ADDIU|SUB|SUBU|AND|SEQ|SNE|SGE|SGT|SLT)\b/i,
+          alias: "function",
+        },
+        register: {
+          pattern:
+            /\(?\$(?:\d+|ra|sp|t\d|s\d|gp|fp|at|k\d|zero|v\d|a\d|f\d+)\)?/i,
+          alias: "variable",
+        },
+        number:
+          /(?:\b|(?=\$))(?:0[hx][\da-f]*\.?[\da-f]+(?:p[+-]?\d+)?|\d[\da-f]+[hx]|\$\d[\da-f]*|0[oq][0-7]+|[0-7]+[oq]|0[by][01]+|[01]+[by]|0[dt]\d+|\d*\.?\d+(?:\.?e[+-]?\d+)?[dt]?)\b/i,
+        operator: /[\[\]*+\-\/%<>=&|$!]/,
+      };
+    </script>
+  </body>
 </html>
