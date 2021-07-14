@@ -9,6 +9,7 @@ import javafx.scene.input.KeyCode;
 public class ConstantAspectRatioDraggingState extends DraggingState {
     public ConstantAspectRatioDraggingState(DraggingState state) {
         super(state);
+        handleMouseMove(getX(), getY());
     }
 
     @Override

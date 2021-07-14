@@ -28,7 +28,7 @@ public class RectangleToolStrategy implements IShapeStrategy {
     }
 
     @Override
-    public void addWidgets(State state, VBox box) {
+    public void initialiseTool(State state, VBox box) {
         state.addColorPicker(box, "Stroke", strokeProp);
         state.addColorPicker(box, "Fill", fillProp);
     }

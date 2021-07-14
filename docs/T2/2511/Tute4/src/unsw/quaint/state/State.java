@@ -86,7 +86,7 @@ public abstract class State {
 
     public void transitionTool(Tool currentTool, VBox widgetBox) {
         widgetBox.getChildren().clear();
-        if (currentTool != null) currentTool.getToolActions().addWidgets(this, widgetBox);
+        if (currentTool != null) currentTool.getToolActions().initialiseTool(this, widgetBox);
 
         if (currentTool == null) {
             this.canvasEvents.changeMouseState(new SimpleState(canvasEvents, x, y));

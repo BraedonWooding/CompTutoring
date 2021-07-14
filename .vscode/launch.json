@@ -6,6 +6,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch StreamExample",
+            "request": "launch",
+            "mainClass": "unsw.StreamExample",
+            "projectName": "CompTutoring_5875e1d6"
+        },
+        {
+            "type": "java",
+            "name": "Launch EmphasisApplication",
+            "request": "launch",
+            "mainClass": "unsw.EmphasisApplication",
+            "vmArgs": "--module-path ./lib --add-modules javafx.controls,javafx.fxml,javafx.media -enableassertions",
+            "projectName": "CompTutoring_5875e1d6"
+        },
+        {
+            "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "unsw.quaint.Main",
