@@ -12,7 +12,7 @@ public class CalculatorTest {
 
     @Test
     public void testAddition() {
-        Expression e = new AdditionExpression(new Number(1), new Number(2));
+        Expression e = BinaryOpExpression.AddExpr(new Number(1), new Number(2));
         assertEquals(3, e.compute(), 0.001);
     }
 
