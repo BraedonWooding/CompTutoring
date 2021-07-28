@@ -65,6 +65,7 @@ public class StackTest {
         stack.push(2);
         stack.push(3);
         stack.push(4);
+        
         assertEquals(10, Stack.sumStack(stack));
     }
 

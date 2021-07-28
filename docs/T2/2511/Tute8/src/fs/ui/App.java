@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.file.FileSystems;
 
+import fs.model.Directory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -37,7 +38,7 @@ public class App extends Application {
                 new ImageView(new Image(ClassLoader.getSystemResourceAsStream("fs/resources/computer.png"))));
         FileSystems.getDefault() //
                 .getRootDirectories() //
-                .forEach(name -> rootNode.getChildren().add(new FilePathTreeItem(name)));
+                .forEach(name -> rootNode.getChildren().add(new FilePathTreeItem(new Directory(name))));
         rootNode.setExpanded(true);
 
         // :(, java generics don't let us do this in a safe way so we need to just *trust* it's correct
