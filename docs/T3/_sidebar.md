@@ -1,7 +1,6 @@
 - [Introduction](_introduction)
-- **Trimesters**
-- [T3](T3/)
-    - [Comp2511 T3](T3/2511/)
+- **Subjects**
+- [COMP2511](T3/2521/)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
