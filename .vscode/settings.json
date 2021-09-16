@@ -3,13 +3,7 @@
         "stdbool.h": "c"
     },
     "java.project.sourcePaths": [
-        "docs/T2/2511/Tute5/src",
-        "docs/T2/2511/Tute4/src",
-        "docs/T2/2511/Tute3/src",
-        "docs/T2/2511/Tute2/src",
-        "docs/T2/2511/Tute1/src",
-        "docs/T2/2511/Tute7/src",
-        "docs/T2/2511/Tute8/src"
+        "docs/T1/2511/Tute1/src"
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
