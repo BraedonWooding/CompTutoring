@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Shouter",
+            "request": "launch",
+            "mainClass": "shouter.Shouter",
+            "projectName": "CompTutoring_5875e1d6"
+        },
+        {
+            "type": "java",
             "name": "Launch Stack",
             "request": "launch",
             "mainClass": "stack.Stack",
