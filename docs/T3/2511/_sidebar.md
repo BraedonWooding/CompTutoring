@@ -2,7 +2,7 @@
 - **Tutorials**
 - [Wk01](T3/2511/Wk01)
 - [Wk02](T3/2511/Wk02)
-- [Wk03](T3/2511/Wk02)
+- [Wk03](T3/2511/Wk03)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
