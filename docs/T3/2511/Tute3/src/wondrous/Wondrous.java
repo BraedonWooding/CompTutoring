@@ -1,15 +1,22 @@
 package wondrous;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Wondrous {
-
-    private final int MY_MAGIC_NUMBER = 42;
-
     public List<Integer> wondrous(int start) {
+        if (start < 1) {
+            throw new IllegalArgumentException("start has to be greater than 1");
+        }
+
         int current = start;
         List<Integer> sequence = new ArrayList<Integer>();
+
+        // stop early, since a starting term of 1
+        // always produces an empty list
+        if (start == 1) return sequence;
 
         while (current != 1) {
             sequence.add(current);
@@ -19,6 +26,8 @@ public class Wondrous {
                 current = (current * 3) + 1;
             }
         }
+
+        sequence.add(1);
 
         return sequence;
     }

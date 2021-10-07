@@ -1,6 +1,7 @@
 package wondrous.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,5 +18,19 @@ public class WondrousTest {
         List<Integer> expected = new ArrayList<Integer>(Arrays.asList(3, 10, 5, 16, 8, 4, 2, 1));
         
         assertEquals(expected, w.wondrous(3));
+    }
+
+    @Test
+    public void regressionTest() {
+        Wondrous w = new Wondrous();
+
+        List<Integer> expected;
+        try {
+            expected = new ArrayList<Integer>();
+        } catch (IllegalArgumentException e) {
+            expected = null;
+        }
+
+        assertEquals(expected, w.wondrous(0));
     }
 }
