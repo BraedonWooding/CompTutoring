@@ -1,5 +1,6 @@
 package unsw.training;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class Trainer {
 
     private List<Seminar> seminars;
 
-    public List<Seminar> getSeminars() {
-        return seminars;
+    public boolean tryBook(LocalDate forDate, String employee) {
+        return seminars.stream().anyMatch(s -> s.tryBook(forDate, employee));
     }
 }

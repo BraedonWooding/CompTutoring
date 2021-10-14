@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * An in person all day seminar with a maximum of 10 attendees.
+ * An in person all day seminar with a
+ * maximum of 10 attendees.
  * @author Robert Clifton-Everest
  *
  */
@@ -13,11 +14,11 @@ public class Seminar {
 
     private List<String> attendees;
 
-    public LocalDate getStart() {
-        return start;
-    }
-
-    public List<String> getAttendees() {
-        return attendees;
+    public boolean tryBook(LocalDate forDate, String employee) {
+        if (start.equals(forDate) && attendees.size() < 10) {
+            attendees.add(employee);
+            return true;
+        }
+        return false;
     }
 }
