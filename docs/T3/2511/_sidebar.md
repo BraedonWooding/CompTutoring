@@ -6,6 +6,7 @@
 - [Wk04](T3/2511/Wk04)
 - [Wk05](T3/2511/Wk05)
 - [Wk07](T3/2511/Wk07)
+- [Wk08](T3/2511/Wk08)
 - **Useful Links**
 - [Design Patterns](DesignPatterns/)
 - [BigO Tool](BigOh)
