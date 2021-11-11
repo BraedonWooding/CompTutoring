@@ -9,7 +9,7 @@ package heist;
  *
  */
 public class BankAccount {
-    
+
     private int balance;
 
     public BankAccount() {
@@ -37,15 +37,23 @@ public class BankAccount {
      * @return True if withdrawal succeeded, false otherwise.
      */
     public boolean withdraw(int amount) {
-        if (amount <= balance) {
-            balance -= amount;
-            return true;
+        synchronized (this) {
+            if (amount <= balance) {
+                /*
+                 * Thread 1 Thread 2 READ balance = 0 WRITES balance = 1 READ balance = 1 WRITES
+                 * balance = 2 Final Value = Balance == 1 rather than 2
+                 */
+
+                balance -= amount;
+                return true;
+            }
+            return false;
         }
-        return false;
     }
 
     /**
      * Get the balance of the account.
+     * 
      * @return
      */
     public int getBalance() {

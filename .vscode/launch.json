@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BankAccountThreadedAccessor",
+            "request": "launch",
+            "mainClass": "heist.BankAccountThreadedAccessor",
+            "projectName": "CompTutoring_5875e1d6"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "stream.App",
